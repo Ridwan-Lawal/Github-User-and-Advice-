@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+ul li a {
+  @apply text-white text-lg transition-colors md:text-darkModeBodyColor md:hover:text-gray-400;
+}

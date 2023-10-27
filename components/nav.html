@@ -1,0 +1,40 @@
+<!-- navigation bar -->
+<nav
+  class="nav border border-black font-manrope md:flex md:flex-row md:justify-between md:py-4 md:px-5"
+>
+  <div class="flex justify-between items-center px-4">
+    <!-- LOGO -->
+    <section class="z-10">
+      <p class="text-2xl text-darkModeBodyColor">PROJECTS</p>
+    </section>
+
+    <!-- HAMBURGER -->
+    <div class="z-10 menu__btn md:hidden">
+      <button class="hamburger hamburger--vortex-r" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- menu -->
+  <div
+    class="fixed w-0 md:w-fit md:bg-white md:bg-opacity-100 md:static md:h-fit md:pt-0 overflow-hidden transtion-all duration-300 top-0 pt-32 bg-darkModeBodyColor bg-opacity-90 h-screen"
+  >
+    <ul class="flex flex-col md:flex-row items-center gap-12">
+      <div class="group flex items-center gap-4">
+        <li><a href="" class="font-mono font-bold">Github Search</a></li>
+        <p
+          class="border opacity-0 transition-opacity group-hover:opacity-100 border-white bg-white w-5 h-5"
+        ></p>
+      </div>
+      <div class="group flex items-center gap-4">
+        <li><a href="" class="font-manrope">Advice Generator</a></li>
+        <p
+          class="border opacity-0 transition-opacity group-hover:opacity-100 border-white bg-white w-5 h-5"
+        ></p>
+      </div>
+    </ul>
+  </div>
+</nav>
