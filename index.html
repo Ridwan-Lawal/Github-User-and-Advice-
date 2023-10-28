@@ -22,11 +22,6 @@
       rel="stylesheet"
     />
 
-    <style>
-      g {
-        fill: white;
-      }
-    </style>
     <!-- script -->
     <script type="module" defer src="./src/script.js "></script>
   </head>
@@ -44,7 +39,7 @@
             >
               devfinder
             </h3>
-            <div class="theme__section flex gap-6">
+            <div class="theme__section cursor-pointer flex gap-6">
               <p class="theme__type text-lightModeTextColor font-bold">Dark</p>
               <p class="theme__icon">
                 <img src="./assets/icon-moon.svg" alt="" />
@@ -76,7 +71,7 @@
           </form>
 
           <!--=========== main body ====================-->
-          <div class="main__gitSearch truncate"></div>
+          <div class="main__gitSearch"></div>
 
           <!-- error message -->
           <div class="error__message hidden"></div>

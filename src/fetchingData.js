@@ -15,7 +15,7 @@ const displayGitProfile = function (datas) {
   // template for displaying data to the dom
   const html = `
   <div
-  class="px-6 bg-white dark:bg-darkModeBodyColor mt-6 shadow-lg shadow-lightCyan dark:shadow-darkBlue dark:shadow-xl md:px-8 py-6 md:py-10 lg:flex lg:gap-9 rounded-2xl lg:rounded-3xl"
+  class="px-6 bg-white dark:bg-darkModeBodyColor  mt-6 shadow-lg shadow-lightCyan dark:shadow-darkBlue dark:shadow-xl md:px-8 py-6 md:py-10 lg:flex lg:gap-9 rounded-2xl lg:rounded-3xl"
 >
   <!-- display image laptop display -->
   <section class="hidden lg:block">
@@ -142,22 +142,23 @@ const displayGitProfile = function (datas) {
 
       <!-- link -->
       <section class="flex gap-6 items-center">
-        <div><img src="${
-          htmlClass.classList.contains("dark") && datas.url
+        <div class=''><img src="${
+          htmlClass.classList.contains("dark") && datas.html_url
             ? "./assets/icon-website-dark.svg"
             : "./assets/icon-website.svg"
-        }" alt="" /></div>
+        }" alt="" class=''/></div>
         <p class="text-lightModeTextColor">
           <a
-            href="${datas.url || ""}"
+            href="${datas.html_url || ""}"
+            target='_blank'
             class="${
-              datas.url
+              datas.html_url
                 ? "text-lightModeTextColor"
                 : "text-lightNotAvailableColor"
             } ${
-    datas.url ? "dark:text-white" : "text-lightNotAvailableColor"
-  } text-sm md:text-base"
-            >${datas.url || "Not Available"}</a
+    datas.html_url ? "dark:text-white" : "text-lightNotAvailableColor"
+  } text-sm md:text-xs text-clip overflow-hidden"
+            >${datas.html_url ? "https://github.com..." : "Not Available"}</a
           >
         </p>
       </section>
@@ -176,6 +177,7 @@ const displayGitProfile = function (datas) {
                 ? `https://twitter.com/${datas.twitter_username}`
                 : ""
             }"
+            target='_blank'
             class="${
               datas.twitter_username
                 ? "text-lightModeTextColor"
@@ -235,6 +237,7 @@ export const getGitProfle = async function (username) {
     if (!res.ok) throw new Error("Something went wrong fetching data :(");
 
     const data = await res.json();
+    console.log(data);
     displayGitProfile(data);
 
     // if no error hide the error-message section
